@@ -1,0 +1,98 @@
+$blueBtn:rgb(99, 119, 236);
+$redBtn: rgb(255, 70, 70);
+
+@function activeBtn($n) {
+    @return darken($n, 20%);
+}
+
+body {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+button {
+    outline-color: rgb(211, 211, 211);
+    cursor: pointer;
+}
+
+.btn {
+    padding: 10px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    box-shadow: 0 1px 5px -1px rgba(85, 85, 85, 0.5);
+
+    @media (max-width: 870px) {
+        margin-bottom: 10px;
+    }
+}
+
+.btn-repeat {
+    margin-right: 5px;
+    background-color: $blueBtn;
+
+    &:active {
+        background-color: activeBtn($blueBtn);
+    }
+}
+
+.btn-delete {
+    background-color: $redBtn;
+
+    &:active {
+        background-color: activeBtn($redBtn);
+    }
+}
+
+.btn-submit {
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    background-color: $blueBtn;
+    box-shadow: 1px 1px 10px rgb(158, 158, 158);
+    
+    &:active {
+        background-color: activeBtn($blueBtn);
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.invisible {
+    display: none;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 50px 0;
+    max-width: 1000px;
+    border: 1px solid lightgray;
+
+    @media(max-width: 870px) {
+        border: none;
+        border-top: 1px solid lightgray;
+    }
+}
+
+.active-page {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 5px;
+        background-color: white;
+        bottom: -2px;
+        left: 0;
+    }
+
+}

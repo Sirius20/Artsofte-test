@@ -1,0 +1,112 @@
+.card-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    @media(max-width: 870px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        height: 160px;
+        padding: 30px;
+        padding-top: 10px;
+        background: linear-gradient(to top, rgba(224, 227, 247, 0.7), rgba(115, 133, 236, 0.7));
+        border-radius: 10px;
+        font-family: sans-serif;
+        font-size: 0.8rem;
+        font-weight: 400;
+
+        h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        input,
+        select {
+            border: 1px solid #d8d8d86b;
+            border-radius: 5px;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+
+        select {
+            height: 34px;
+        }
+
+        .card-number input {
+            width: 100%;
+        }
+    }
+    
+    .card-pay {
+        position: relative;
+        margin-right: 150px;
+
+        @media(max-width: 870px) {
+            margin-right: 0px;
+            margin-bottom: 150px;
+        }
+
+        .card-discription {
+            margin-bottom: 10px;
+
+            label:first-child {
+                margin-right: 90px;
+            }
+        }
+
+        .card-date {
+            display: flex;
+            justify-content: space-between;
+
+            input {
+                width: 150px;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            top: 35%;
+            left: 110%;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgb(212, 212, 212);
+            border-left: transparent;
+            border-bottom: transparent;
+            border-radius: 2px;
+            transform: rotate(45deg);
+
+            @media(max-width: 870px) {
+                top: 120%;
+                left: 40%;
+                transform: rotate(135deg);
+            }
+        }
+    }
+}
+
+.transfer-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 100px;
+
+    input {
+        margin-right: 20px;
+        height: 30px;
+        font-size: 1.2rem;
+        border: 1px solid rgb(155, 155, 155);
+        border-radius: 5px;
+
+        @media(max-width: 870px) {
+            width: 30%;
+        }
+    }
+}
